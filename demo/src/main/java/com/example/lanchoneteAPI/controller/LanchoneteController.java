@@ -25,12 +25,12 @@ public class LanchoneteController {
     private LanchoneteService lanchoneteService;
 @GetMapping
 public ResponseEntity<List<ProdutoModel>> listarTodos(ProdutoModel produto){
-    if (produto.isDisponivel()){
+    //if (produto.isDisponivel()){
     List<ProdutoModel> produtos = lanchoneteService.listarTodos();
     return ResponseEntity.ok(produtos);
-    }
-    return null;
-}
+   }
+  // return null;
+//}
 
 @GetMapping("/{id}")
 public ResponseEntity<ProdutoModel> buscarPorId(@PathVariable int id){
