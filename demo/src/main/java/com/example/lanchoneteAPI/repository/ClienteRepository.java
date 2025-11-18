@@ -1,5 +1,10 @@
 package com.example.lanchoneteAPI.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class ClienteRepository {
+import com.example.lanchoneteAPI.model.ClienteModel;
+
+@Repository
+public interface ClienteRepository extends JpaRepository<ClienteModel, Integer> {
 
 }

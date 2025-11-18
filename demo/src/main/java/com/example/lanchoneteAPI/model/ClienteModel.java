@@ -1,4 +1,5 @@
 package com.example.lanchoneteAPI.model;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,8 +14,7 @@ import lombok.Setter;
 @Table(name = "clientes")
 @Getter
 @Setter
-public class ClienteModel extends AbstractEndereco{
-
+public class ClienteModel {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)    
 private int id;
@@ -28,30 +28,45 @@ private String email;
 @Column(nullable = false)
 private String telefone;
 
-@Column(nullable = false)
-private String endereco;
+//@Column(nullable = false)
+//private Endereco endereco;
 
 @Column(nullable = false)
-private  preco;
+private String data;
 
 @Column(nullable = false)
-private String tempoPreparo;
+private boolean ativo = true;
 
-public ProdutoModel(){
+@Column(nullable = true)
+private String preferencias;
+
+@Column(nullable = false)
+private String histCompra;
+
+@Column(nullable = false)
+private Long cpf;
+
+@Column(nullable = false)
+private String pedidos;
+
+
+public ClienteModel(){
 
 }
-public ProdutoModel(int id, String categoria, String nome, String descricao, boolean disponivel, Double preco, String tempoPreparo){
 
+
+public ClienteModel(int id, String nomeCompleto, String email, String telefone, String data,
+        boolean ativo, String preferencias, String histCompra, Long cpf, String pedidos) {
     this.id = id;
-    this.nome = nome;
-    this.preco = preco;
-    this.categoria = categoria;
-    this.descricao = descricao;
-    this.disponivel = disponivel;
-    this.tempoPreparo = tempoPreparo;
+    this.nomeCompleto = nomeCompleto;
+    this.email = email;
+    this.telefone = telefone;
+    //this.endereco = endereco;
+    this.data = data;
+    this.ativo = ativo;
+    this.preferencias = preferencias;
+    this.histCompra = histCompra;
+    this.cpf = cpf;
+    this.pedidos = pedidos;
 }
-
-
-
 }
-
